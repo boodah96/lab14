@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book-app</title>
+    <link rel="stylesheet" href="../styles/base.css">
+    <style>.hidden{display: none;}</style>
+</head>
+
+<body>
+    <h2>Search Results</h2>
+    <section>
+        <%allBooks.forEach(element=>{ %>
+            <div>
+                <img src=<%=element.img %> alt="book Image ">
+                <h2>
+                    <%= element.title %>
+                </h2>
+                <h3>
+                    <%= element.authors %>
+                </h3>
+                <p>
+                    <%= element.description %>
+                </p>
+
+                <form action='/books' method="post">
+                    <input type="text" name="img" value="<%=element.img %>" class="hidden">
+                    <input type="text" name="title" value=" <%= element.title %>" class="hidden">
+                    <input type="text" name="authors" value="<%= element.authors %>" class="hidden">
+                    <input type="text" name="description" value="  <%= element.description %>" class="hidden">
+                    <input type="text" name="isbn" value=" <%= element.isbn %>" class="hidden">
+                    <input type="text" name="bookshelf" value="<%= element.bookshelf %> " class="hidden">
+                    <button type="submit">Select this Book</button>
+
+           
+
+                </form>
+            </div>
+                <% }) %>
+
+    </section>
+</body>
+
+</html>

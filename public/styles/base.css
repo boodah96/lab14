@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(221, 227, 231);
+    
+}
+div{
+    width: 400px;
+    border: 2px solid black;
+    position: relative;
+    margin: 10px;
+
+}
+div img{
+    width: 150px;
+    margin:10px 75px;
+}
